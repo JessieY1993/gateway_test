@@ -1,5 +1,4 @@
 # gateway_test
-==============================================================================================
 
 ## Config
 Put global configurations in cypress.config.js for easily read, like test_env
