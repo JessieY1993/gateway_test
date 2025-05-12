@@ -15,3 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+beforeEach(function(){
+    cy.log(`Current Env: ${JSON.stringify(Cypress.env())}`)
+    cy.log(`Current Config: ${JSON.stringify(Cypress.config())}`)
+})
