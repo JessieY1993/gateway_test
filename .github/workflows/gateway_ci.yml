@@ -33,7 +33,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Install dependencies    
-      run: npm ci
+      run: npm install
 
     - name: Make shell executable
       run: |
