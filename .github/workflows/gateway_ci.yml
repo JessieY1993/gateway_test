@@ -58,7 +58,7 @@ jobs:
     - name: Run Cypress tests with ${{ env.BROWSER }}
       uses: cypress-io/github-action@v5
       with:
-        command: cypress run --browser $BROWSER
+        command: npx cypress run --browser $BROWSER
 
     - name: Open Test Reports
       uses: cypress-io/github-action@v5
