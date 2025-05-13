@@ -9,20 +9,18 @@ describe("Add Route Test", () => {
             cy.log(this.fixtureData.url);
             addRoutePage = new AddRoutePage(this.fixtureData.url)
         })
-        cy.fixture('add_service.json').then(function(serviceData){
-            this.serviceFixtureData = serviceData
-            addServicePage = new AddServicePage(this.serviceFixtureData.url)
-            addServicePage.addService(this.serviceFixtureData.upstreamURL, this.serviceFixtureData.serviceName)
-        })
     });
     
     beforeEach(function () {
         addRoutePage.visit();
     });
 
-    // it("should add route successfully when given routeName", function () {
-    //     // todo: add route
-    // })
-    
-    //add more sccenarios
+    context("Functional Test", () => {
+
+    })
+
+
+    context("Negative Test", () => {
+        
+    })
 })

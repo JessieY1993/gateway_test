@@ -6,4 +6,6 @@ export default class BasePage {
     visit() {
       cy.visit(this.url)
     }
+
+    //Put common methods 
   }

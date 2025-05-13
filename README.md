@@ -22,7 +22,7 @@ All elements are concentrated in the page object, if the page changes, only one 
 Add global operations in commands.js like start docker service, some clean works
 
 ## Case Management
-Test Cases put in folder e2e grouped by components, and cases are separated by functional tests and negative tests for reduce large amount of tests in one file.
+Test Cases put in folder e2e grouped by components, and test scenarios grouped by functional test and negative test in context.
 
 Corresponding page objects imported in test cases to easily build test scenarios.
 

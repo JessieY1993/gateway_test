@@ -5,32 +5,32 @@ export default class AddServicePage extends BasePage {
     super(url)
 
     this.elements = {
-      input: {
-        serviceName: '[data-testid="gateway-service-name-input"]',
-        tags: '[data-testid="gateway-service-tags-input"]',
-        upstreamURL: '[data-testid="gateway-service-url-input"]',
-        retries: '',
-        connectionTimeout: '',
-        writeTimeout: '',
-        readTimeout: '',
-        clientCertificate: '',
-        caCertificates: '',
-        protocol: '',
-        host: '',
-        path: '',
-        port: ''
-      },
-      button: {
-        save: '[data-testid="service-create-form-submit"]',
-        cancel: '[data-testid="service-create-form-submit"]',
-        viewConfiguration: '[data-testid="service-create-form-view-configuration"]',
-        viewAdvancedFields: '[data-testid="collapse-trigger-content"]'
-      },
-      check: {
-        protocolHostPortPath: '[data-testid="gateway-service-protocol-radio"]',
-        tlsVerify: ""
+        input: {
+          serviceName: '[data-testid="gateway-service-name-input"]',
+          tags: '[data-testid="gateway-service-tags-input"]',
+          upstreamURL: '[data-testid="gateway-service-url-input"]',
+          retries: '',
+          connectionTimeout: '',
+          writeTimeout: '',
+          readTimeout: '',
+          clientCertificate: '',
+          caCertificates: '',
+          protocol: '',
+          host: '',
+          path: '',
+          port: ''
+        },
+        button: {
+          save: '[data-testid="service-create-form-submit"]',
+          cancel: '[data-testid="service-create-form-submit"]',
+          viewConfiguration: '[data-testid="service-create-form-view-configuration"]',
+          viewAdvancedFields: '[data-testid="collapse-trigger-content"]'
+        },
+        check: {
+          protocolHostPortPath: '[data-testid="gateway-service-protocol-radio"]',
+          tlsVerify: ""
+        }
       }
-    }
   }
 
   /**
@@ -103,8 +103,6 @@ export default class AddServicePage extends BasePage {
     if(upstreamURL != undefined) {
       actions.push(() => this.typeUpstreamURL(upstreamURL))
     }
-
-    console.log('actions', actions)
 
     actions.forEach(action => action())
 

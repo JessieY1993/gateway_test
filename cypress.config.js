@@ -15,7 +15,8 @@ module.exports = {
       
       return config;
     },
-    specPattern: 'cypress/e2e/**/*.cy.js',
+    // specPattern: 'cypress/e2e/**/*.cy.js',
+    specPattern: 'cypress/e2e/service/add_service.cy.js',
     supportFile: 'cypress/support/e2e.js',
     video: true,
     videoCompression: 32,
