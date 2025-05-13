@@ -35,6 +35,13 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
+    - name: Capture container logs
+      if: always()
+      run: |
+        docker-compose logs --no-color > docker.log 2>&1
+        echo "=== Docker Container Logs ==="
+        cat docker.log
+
     - name: Install dependencies    
       run: npm install
 
@@ -58,8 +65,6 @@ jobs:
     - name: Run Cypress tests with ${{ env.BROWSER }}
       uses: cypress-io/github-action@v5
       with:
-        headless: true
-        config-file: cypress.config.js
         command: cypress run --browser $BROWSER
 
     - name: Open Test Reports
@@ -67,7 +72,7 @@ jobs:
       with:
         command: npm run open:report
 
-    - name: Cleanup Docker resources
+    - name: Stop docker app
       if: always()
       run: ./stop.sh
       env:
