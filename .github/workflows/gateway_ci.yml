@@ -65,8 +65,8 @@ jobs:
       with:
         command: npm run open:report
 
-    - name: Stop docker app
+    - name: Clean Up docker resources
       if: always()
-      run: ./stop.sh
-      env:
-        COMPOSE_FILE: docker/docker-compose.yml
+      run: |
+        docker system prune -f
+        docker volume prune -f
