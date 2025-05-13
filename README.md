@@ -26,14 +26,18 @@ Test Cases put in folder e2e grouped by components, and cases are separated by f
 
 Corresponding page objects imported in test cases to easily build test scenarios.
 
+## Docker
+Put docker-compse.yml for start app.
+
 ## Report
 Integrated mochawesome reporter to generate json and html report，which rovides beautiful, interactive and highly customizable HTML reports that clearly display test results, error details and contextual information.
 
 ## CI/Github Actions
 Integrated Github actions to trigger CI process when push code to branch, stages includes:
 1. checkout
-2. build/install
-3. start docker service
-4. run test
-5. generate report
-6. clean
+2. set up docker/nodejs
+3. install
+4. start docker service
+5. run test
+6. generate report
+7. stop docker and clean
