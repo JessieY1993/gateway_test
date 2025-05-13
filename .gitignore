@@ -5,3 +5,4 @@ reports/
 videos/*
 screenshots/*
 .vscode/*
+package-lock.json
