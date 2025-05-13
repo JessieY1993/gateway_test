@@ -55,12 +55,12 @@ jobs:
           npx wait-on http://localhost:8002 --timeout 60000
           echo "App is running!"
 
-    - name: Run Cypress tests with ${{BROWSER}}
+    - name: Run Cypress tests with ${{ env.BROWSER }}
       uses: cypress-io/github-action@v5
       with:
         headless: true
         config-file: cypress.config.js
-        command: cypress run --browser ${{BROWSER}}
+        command: cypress run --browser $BROWSER
 
     - name: Open Test Reports
       uses: cypress-io/github-action@v5
