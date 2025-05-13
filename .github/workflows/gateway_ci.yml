@@ -62,12 +62,8 @@ jobs:
         config-file: cypress.config.js
         command: cypress run --browser ${{BROWSER}}
 
-    - name: Generate report
-      uses: cypress-io/github-action@v5
-      with:
-        command: npm run 
-
     - name: Open Test Reports
+      uses: cypress-io/github-action@v5
       command: npm run open:report
 
     - name: Cleanup Docker resources
