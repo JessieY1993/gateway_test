@@ -1,4 +1,4 @@
-import BasePage from './base-page';
+import BasePage from '../base_page';
 export default class AddRoutePage extends BasePage {
 
   constructor(url) {

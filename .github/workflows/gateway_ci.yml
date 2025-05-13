@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  BROWSER: "chrome"
+
 jobs:
   build:
 
@@ -52,15 +55,23 @@ jobs:
           npx wait-on http://localhost:8002 --timeout 60000
           echo "App is running!"
 
-    - name: Run Cypress tests
+    - name: Run Cypress tests with ${{BROWSER}}
       uses: cypress-io/github-action@v5
       with:
         headless: true
         config-file: cypress.config.js
-        command: npm run test:ci
+        command: cypress run --browser ${{BROWSER}}
+
+    - name: Generate report
+      uses: cypress-io/github-action@v5
+      with:
+        command: npm run 
+
+    - name: Open Test Reports
+      command: npm run open:report
 
     - name: Cleanup Docker resources
       if: always()
-      run: |
-        docker system prune -f
-        docker volume prune -f
+      run: ./stop.sh
+      env:
+        COMPOSE_FILE: docker/docker-compose.yml

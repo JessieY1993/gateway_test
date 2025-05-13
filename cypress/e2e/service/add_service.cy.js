@@ -3,7 +3,7 @@ import AddServicePage from "../../page_objects/service/add_service_page";
 describe("Add Service Test", () => {
     let addServicePage
     before(function () {
-        cy.fixture('add_service.json').then(function(data) {
+        cy.fixture('service/add_service.json').then(function(data) {
             this.fixtureData = data;
             cy.log(this.fixtureData.url);
             addServicePage = new AddServicePage(this.fixtureData.url)
