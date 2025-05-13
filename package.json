@@ -11,7 +11,7 @@
     "test": "cypress run --browser chrome && npm run generate:report",
     "test:firefox": "cypress run --browser firefox",
     "test:edge": "cypress run --browser edge",
-    "generate:report": "mochawesome-merge cypress/results/*.json > reports.json && marge reports.json --reportDir reports --inline",
+    "generate:report": "mochawesome-merge cypress/results/*.json > reports/reports.json && marge reports/reports.json --reportDir reports --inline",
     "clean:reports": "rm -rf cypress/results reports.json reports",
     "test:clean": "npm run clean:reports && npm run test:ci",
     "open:report": "open reports/reports.html || start reports/reports.html || xdg-open reports/reports.html"
