@@ -27,7 +27,7 @@ Test Cases put in folder e2e grouped by components, and cases are separated by f
 Corresponding page objects imported in test cases to easily build test scenarios.
 
 ## Docker
-Put docker-compse.yml for start app.
+Put docker-compse.yml for app start and stop.
 
 ## Report
 Integrated mochawesome reporter to generate json and html report，which rovides beautiful, interactive and highly customizable HTML reports that clearly display test results, error details and contextual information.
