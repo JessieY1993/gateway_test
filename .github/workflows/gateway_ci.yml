@@ -54,10 +54,10 @@ jobs:
 
     - name: Run Cypress tests
       uses: cypress-io/github-action@v5
-        with:
-          headless: true
-          config-file: cypress.config.js
-          command: npm run test:ci
+      with:
+        headless: true
+        config-file: cypress.config.js
+        command: npm run test:ci
 
     - name: Cleanup Docker resources
       if: always()
