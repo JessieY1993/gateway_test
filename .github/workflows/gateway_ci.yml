@@ -64,7 +64,8 @@ jobs:
 
     - name: Open Test Reports
       uses: cypress-io/github-action@v5
-      command: npm run open:report
+      with:
+        command: npm run open:report
 
     - name: Cleanup Docker resources
       if: always()
