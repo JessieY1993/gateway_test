@@ -1,7 +1,7 @@
 # gateway_test
 
 ## Config
-Put global configurations in cypress.config.js for easily read, like test_env
+Put global configurations in cypress.config.js for easily read, like BROWSER for browser types
 
 ## Test Data Management
 
@@ -26,18 +26,35 @@ Test Cases put in folder e2e grouped by components, and cases are separated by f
 
 Corresponding page objects imported in test cases to easily build test scenarios.
 
+## Screenshots/Videos/Logs
+Enable screenshots in cypress config which could capture screenshots automatically when failure occures
+Enable videos in cypress config which could store videos automatically when failure occures
+Add console.log task in config which could use `cy.task("log", "msg")`
+
+
 ## Docker
 Put docker-compse.yml for app start and stop.
 
 ## Report
 Integrated mochawesome reporter to generate json and html report，which rovides beautiful, interactive and highly customizable HTML reports that clearly display test results, error details and contextual information.
 
+## Local Run
+Some scripts for simple local run:
+```bash
+1. npm run start:app       #start docker container of app
+2. npm run test            #for headless run and generate report
+3. npm run cy:open         #for debug
+4. npm run stop:app        #stop and rm docker container to avoid port conflict
+5. npm run generate:report
+6. npm run open:report     #open the generated html report
+```
+
 ## CI/Github Actions
-Integrated Github actions to trigger CI process when push code to branch, stages includes:
-1. checkout
-2. set up docker/nodejs
-3. install
-4. start docker service
-5. run test
-6. generate report
-7. stop docker and clean
+Integrated Github actions to trigger CI process when push code to branch, jobs includes:
+1. Checkout code
+2. Set up Docker Buildx and Nodejs
+3. Install dependencies 
+4. Make shell executable(start.sh)
+5. Start app via containers
+6. Run Cypress tests with ${{ env.BROWSER }}
+7. Open Test Reports

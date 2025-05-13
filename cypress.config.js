@@ -8,7 +8,7 @@ module.exports = {
 
       on('task', {
         log(message) {
-          console.log(message); // 将日志输出到 Node 终端
+          console.log(message);
           return null;
         }
       });
@@ -17,7 +17,6 @@ module.exports = {
     },
     specPattern: 'cypress/e2e/**/*.cy.js',
     supportFile: 'cypress/support/e2e.js',
-    // 视频和截图配置
     video: true,
     videoCompression: 32,
     screenshotOnRunFailure: true,

@@ -11,10 +11,10 @@
     "test": "cypress run --browser chrome && npm run generate:report",
     "test:firefox": "cypress run --browser firefox",
     "test:edge": "cypress run --browser edge",
-    "generate:report": "mochawesome-merge cypress/results/*.json > mochawesome.json && marge mochawesome.json --reportDir mochawesome-report --inline",
-    "clean:reports": "rm -rf cypress/results mochawesome.json mochawesome-report",
+    "generate:report": "mochawesome-merge cypress/results/*.json > reports.json && marge reports.json --reportDir reports --inline",
+    "clean:reports": "rm -rf cypress/results reports.json reports",
     "test:clean": "npm run clean:reports && npm run test:ci",
-    "open:report": "open mochawesome-report/mochawesome.html || start mochawesome-report/mochawesome.html || xdg-open mochawesome-report/mochawesome.html"
+    "open:report": "open reports/reports.html || start reports/reports.html || xdg-open reports/reports.html"
   },
   "author": "",
   "license": "ISC",

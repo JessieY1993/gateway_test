@@ -2,7 +2,7 @@ reports/
 node_modules/
 results/
 reports/
-videos/*
-screenshots/*
+cypress/videos
+cypress/screenshots
 .vscode/*
 package-lock.json
