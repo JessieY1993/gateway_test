@@ -20,3 +20,11 @@ beforeEach(function(){
     cy.log(`Current Env: ${JSON.stringify(Cypress.env())}`)
     cy.log(`Current Config: ${JSON.stringify(Cypress.config())}`)
 })
+
+// ignore "Script error" of crossorigin
+Cypress.on('uncaught:exception', (err) => {
+    if (err.message.includes('Script error')) {
+      return false;
+    }
+    return true;
+});

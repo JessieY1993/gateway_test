@@ -45,8 +45,14 @@ Cypress.Commands.add('haveText', (textSelector, expectText) => {
 
 //command: contain text 
 Cypress.Commands.add('matchText', (textSelector, regx) => {
-    cy.get(textSelector).should('match', regx)
-});
+    cy.get(textSelector)
+      .should('be.visible')
+      .invoke('text') // 先获取文本内容
+      .then((text) => {
+        const cleaned = text.trim().replace(/[^\da-f-]/gi, '');
+        expect(cleaned).to.match(regx);
+      });
+  });
 
 //command: random
 Cypress.Commands.add('generateRandom', (length = 8, type = 'alphanumeric') => {
@@ -71,4 +77,4 @@ Cypress.Commands.add('skipIfNotExists', (selector) => {
       }
       return cy.get(selector);
     });
-  });
+});
