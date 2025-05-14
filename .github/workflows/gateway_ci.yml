@@ -60,6 +60,13 @@ jobs:
       with:
         command: npx cypress run --browser ${{ env.BROWSER }}
 
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: reports/*.html
+        if-no-files-found: error
+
     - name: Open Test Reports
       uses: cypress-io/github-action@v5
       with:
