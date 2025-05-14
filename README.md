@@ -57,4 +57,3 @@ Integrated Github actions to trigger CI process when push code to branch, jobs i
 4. Make shell executable(start.sh)
 5. Start app via containers
 6. Run Cypress tests with ${{ env.BROWSER }}
-7. Open Test Reports
