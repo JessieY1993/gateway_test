@@ -68,7 +68,7 @@ jobs:
         if-no-files-found: warn
 
     - name: Upload report
-      uses: actions/upload-artifact@v3.1.3
+      uses: actions/upload-artifact@v4
       with:
-        name: test-report
-        path: cypress/report.html
+        name: reports
+        path: cypress/reports/reports.html
