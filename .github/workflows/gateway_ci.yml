@@ -60,13 +60,6 @@ jobs:
       with:
         command: npx cypress run --browser ${{ env.BROWSER }}
 
-    - name: Upload screenshots
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-screenshots
-        path: cypress/screenshots/
-        if-no-files-found: warn
-
     - name: Upload report
       uses: actions/upload-artifact@v4
       with:
