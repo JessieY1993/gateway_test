@@ -26,8 +26,7 @@ module.exports = {
     reporterOptions: {
       reportDir: "cypress/results",
       overwrite: true,
-      json: true,
-      reportFilename: "gateway-report"
+      json: true
     }
   }
 };
