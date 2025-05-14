@@ -63,8 +63,8 @@ jobs:
     - name: Upload report
       uses: actions/upload-artifact@v4
       with:
-        name: report
-        path: cypress/results/mochawesome.html
+        name: artifact-${{ github.run_id }}-${{ github.run_attempt }}
+        path: cypress/results/
 
     - name: Upload screenshots
       uses: actions/upload-artifact@v4
