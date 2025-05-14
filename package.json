@@ -11,8 +11,8 @@
     "test": "cypress run --browser chrome && npm run generate:report",
     "test:firefox": "cypress run --browser firefox",
     "test:edge": "cypress run --browser edge",
-    "generate:report": "mochawesome-merge cypress/results/*.json > cypress/results/reports.json && marge cypress/results/reports.json --reportDir cypress/reports --inline",
-    "open:report": "open cypress/reports/report.html || start cypress/reports/report.html || xdg-open cypress/reports/report.html"
+    "generate:report": "mochawesome-merge cypress/results/*.json > cypress/results/reports.json && marge cypress/results/reports.json --reportDir cypress/results --inline",
+    "open:report": "open cypress/results/report.html || start cypress/results/report.html || xdg-open cypress/results/report.html"
   },
   "author": "",
   "license": "ISC",
