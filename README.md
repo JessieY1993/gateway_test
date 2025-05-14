@@ -19,7 +19,7 @@ Page objects put in page_objects folder grouped by component. The individual pag
 All elements are concentrated in the page object, if the page changes, only one place needs to be modified.
 
 ### Commands
-Add global operations in commands.js like start docker service, some clean works
+Add operations cross pages in commands.js like "typeTextForInput", "clickButton".
 
 ## Case Management
 Test Cases put in folder e2e grouped by components, and test scenarios grouped by functional test and negative test in context.
