@@ -63,7 +63,7 @@ jobs:
     - name: Upload report
       uses: actions/upload-artifact@v4
       with:
-        name: artifact-${{ github.run_id }}-${{ github.run_attempt }}
+        name: artifact-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.node-version }}
         path: cypress/results/
 
     - name: Upload screenshots
